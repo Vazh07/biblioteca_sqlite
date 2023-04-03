@@ -1,0 +1,10 @@
+Modelos:
+	Libro (Book) -> title copyright edition pages
+	Autor (Author) -> name nationality birth fields
+	Editorial (Publisher) -> name country founded genre
+Controllers:
+	Libros
+	Autores
+	Editoriales
+Vistas: (Mustache)
+	1 editorial-> M libros <-> 1 autor

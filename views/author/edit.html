@@ -30,7 +30,17 @@
             <td><input type="text" name="author_nationality" value="{{author_nationality}}"></td>
             <td><input type="number" name="author_birth_year" value="{{author_birth_year}}"></td>
             <td><input type="text" name="author_fields" value="{{author_fields}}"></td>
-            <td><input type="" name="" value=""><ul>{{#books}}<li><a href="/book/{{book_id}}">{{book_title}}</a></li>{{/books}}</ul></td></tr>
+            <td>
+              <ul>
+                {{#books}}<li><a href="/book/{{book_id}}">{{book_title}}</a></li>{{/books}}
+              </ul><br>
+              {{#allBooks}}
+              <div class="same-row">
+                <input type="checkbox" name="book_{{book_id}}" value="{{book_title}}">
+                <label for="book_{{book_id}}">{{book_title}}</label><br>
+              </div>
+              {{/allBooks}}
+            </td></tr>
             <input class="button-primary" type="submit" value="Update">
           </form>
         {{/author}}</tbody>

@@ -26,13 +26,34 @@
         </tr>
       </thead><tbody>
         {{#book}}
-         <tr><td><a href="/book/{{book_id}}"/>{{book_title}}</a></td>
-          <td>{{book_edition}}</td>
-          <td>{{book_copyright}}</td>
-          <td>{{book_language}}</td>
-          <td>{{book_pages}}</td>
-          <td><a href="/author/{{book_author_id}}"/>{{book_author}}</a></td>
-          <td><a href="/publisher/{{book_publisher_id}}"/>{{book_publisher}}</a></td></tr>
+        <form action="/book/{{author_id}}" method="POST">
+          <input type="hidden" name="_method" value="PUT">
+         <tr><td><input type="text" name="book_title" value="{{book_title}}"></td>
+          <td><input type="text" name="book_edition" value="{{book_edition}}"></td>
+          <td><input type="number" name="book_copyright" value="{{book_copyright}}"></td>
+          <td><input type="text" name="book_language" value="{{book_language}}"></td>
+          <td><input type="number" name="book_pages" value="{{book_pages}}"></td>
+          <td>
+            <a href="/author/{{book_author_id}}"/>{{book_author}}</a><br>
+            {{#authors}}
+            <div class="same-row">
+                <input type="radio" name="author-id" value="{{author_name}}">
+                <label for="author-{{author_id}}">{{author_name}}</label><br>
+              </div>
+            {{/authors}}
+          </td>
+          <td>
+            <a href="/publisher/{{book_publisher_id}}"/>{{book_publisher}}</a><br>
+            {{#publishers}}
+            <div class="same-row">
+                <input type="radio" name="publisher-id" value="{{publisher_name}}">
+                <label for="publisher-{{publisher_id}}">{{publisher_name}}</label><br>
+              </div>
+            {{/publishers}}
+          </td>
+          </tr>
+          <input class="button-primary" type="submit" value="Update">
+        </form>
         {{/book}}</tbody>
       </table>
     </div>

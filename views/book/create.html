@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>{{title}}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" type="text/css" href="/css/normalize.css">
+  <link rel="stylesheet" type="text/css" href="/css/skeleton.css">
+  <link rel="icon" type="image/png" href="/css/icon.png">
+</head>
+<body>
+  <div>
+    <div class="row">
+      <div class="eleven column" style="margin-top: 10%">
+       <h2>{{title}}</h2>
+       <table><thead>
+        <tr>
+          <th>title</th>
+          <th>edition</th>
+          <th>copyright</th>
+          <th>language</th>
+          <th>pages</th>
+          <th>author</th>
+          <th>publisher</th>
+        </tr>
+      </thead><tbody>
+        <form action="/book" method="POST">
+         <tr><td><input type="text" name="book_title"></td>
+          <td><input type="text" name="book_edition"></td>
+          <td><input type="number" name="book_copyright"></td>
+          <td><input type="text" name="book_language"></td>
+          <td><input type="number" name="book_pages"></td>
+          <td>
+            {{#authors}}
+            <div class="same-row">
+                <input type="radio" name="author-id" value="{{author_id}}">
+                <label for="author-{{author_id}}">{{author_name}}</label><br>
+              </div>
+            {{/authors}}
+          </td>
+          <td>
+            {{#publishers}}
+            <div class="same-row">
+                <input type="radio" name="publisher-id" value="{{publisher_id}}">
+                <label for="publisher-{{publisher_id}}">{{publisher_name}}</label><br>
+              </div>
+            {{/publishers}}
+          </td>
+          </tr>
+          <input class="button-primary" type="submit" value="Create">
+        </form>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <a class="button button-primary" href="/book">Back</a>
+</div>
+</body>

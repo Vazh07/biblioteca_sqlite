@@ -28,7 +28,12 @@
 							<td><input type="text" name="author_nationality"></td>
 							<td><input type="number" name="author_birth_year"></td>
 							<td><input type="text" name="author_fields"></td>
-							<td><input type="" name="" value=""></td></tr>
+							<td>{{#books}}
+								<div class="same-row">
+									<input type="checkbox" name="book_{{book_id}}" value="{{book_title}}">
+									<label for="book_{{book_id}}">{{book_title}}</label><br>
+								</div>
+							{{/books}}</td></tr>
 							<input class="button-primary" type="submit" value="Create">
 						</form>
 					</tbody>

@@ -25,3 +25,25 @@
       align-items: center;
       flex-direction: column;
     }
+
+    .same-row{
+      display: flex;
+      flex-direction: row;
+      align-self: flex-end;
+      justify-content: flex-start;
+      width:100%;
+    }
+
+    [type="checkbox"]+ label {
+      display: inline-block;
+      margin-left: 0.5em;
+      margin-right: 2em;
+      line-height: 1em;
+    }
+
+    [type="radio"]+ label {
+      display: inline-block;
+      margin-left: 0.5em;
+      margin-right: 2em;
+      line-height: 1em;
+    }

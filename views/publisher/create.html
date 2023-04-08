@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>{{title}}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" type="text/css" href="/css/normalize.css">
+  <link rel="stylesheet" type="text/css" href="/css/skeleton.css">
+  <link rel="icon" type="image/png" href="/css/icon.png">
+</head>
+<body>
+  <div>
+    <div class="row">
+     <div class="eleven column" style="margin-top: 10%">
+       <h2>{{title}}</h2>
+       <table><thead>
+        <tr>
+          <th>publisher</th>
+          <th>country</th>
+          <th>founded</th>
+          <th>genre</th>
+          <th>books_title</th>
+        </tr>
+      </thead><tbody>
+        <form action="/publisher" method="POST">
+          <tr><td><input type="text" name="publisher_name"></td>
+            <td><input type="text" name="publisher_country"></td>
+            <td><input type="number" name="publisher_founded"></td>
+            <td><input type="text" name="publisher_genre"></td>
+            <td>
+              {{#books}}
+              <div class="same-row">
+                <input type="checkbox" name="book_{{book_id}}" value="{{book_title}}">
+                <label for="book_{{book_id}}">{{book_title}}</label><br>
+              </div>
+              {{/books}}
+            </td></tr>
+            <input class="button-primary" type="submit" value="Create">
+          </form>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <a class="button button-primary" href="/publisher">Back</a>
+</div>
+</body>

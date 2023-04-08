@@ -24,11 +24,11 @@
         </tr>
       </thead><tbody>
         {{#authors}}
-        <tr><td><a href="/author/{{id}}"/>{{author}}</a></td>
-          <td>{{nationality}}</td>
-          <td>{{birth_year}}</td>
-          <td>{{fields}}</td>
-          <td><ul>{{#books}}<li><a href="/book/{{book_id}}">{{book_name}}</a></li>{{/books}}</ul></td></tr>
+        <tr><td><a href="/author/{{author_id}}"/>{{author_name}}</a></td>
+          <td>{{author_nationality}}</td>
+          <td>{{author_birth_year}}</td>
+          <td>{{author_fields}}</td>
+          <td><ul>{{#books}}<li><a href="/book/{{book_id}}">{{book_title}}</a></li>{{/books}}</ul></td></tr>
         {{/authors}}</tbody>
       </table>
     </div>

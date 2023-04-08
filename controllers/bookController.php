@@ -10,7 +10,7 @@
     }
 
     public function show($id) {
-      $book = bookModel::find($id);
+      $book = bookModel::where('book_id',$id);
       return view('book/show',
         ['book'=>$book,
          'title'=>'Book Detail']);

@@ -24,16 +24,19 @@
         </tr>
       </thead><tbody>
         {{#author}}
-        <tr><td><a href="/author/{{author_id}}"/>{{author_name}}</a></td>
-          <td>{{author_nationality}}</td>
-          <td>{{author_birth_year}}</td>
-          <td>{{author_fields}}</td>
-          <td><ul>{{#books}}<li><a href="/book/{{book_id}}">{{book_title}}</a></li>{{/books}}</ul></td></tr>
-          <a class="button button-primary" href="/author/{{author_id}}/edit">Edit</a> 
+        <form action="/author/{{author_id}}" method="POST">
+          <input type="hidden" name="_method" value="PUT">
+          <tr><td><input type="text" name="author_name" value="{{author_name}}"></td>
+            <td><input type="text" name="author_nationality" value="{{author_nationality}}"></td>
+            <td><input type="number" name="author_birth_year" value="{{author_birth_year}}"></td>
+            <td><input type="text" name="author_fields" value="{{author_fields}}"></td>
+            <td><input type="" name="" value=""><ul>{{#books}}<li><a href="/book/{{book_id}}">{{book_title}}</a></li>{{/books}}</ul></td></tr>
+            <input class="button-primary" type="submit" value="Update">
+          </form>
         {{/author}}</tbody>
       </table>
     </div>
   </div>
-<a class="button button-primary" href="/author">Back</a>
+  <a class="button button-primary" href="/author">Back</a> 
 </div>
 </body>

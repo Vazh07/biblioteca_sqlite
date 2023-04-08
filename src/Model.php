@@ -30,8 +30,8 @@ class Model {
 	DB::_insert($params,$item);
   }
   
-  public static function update($id,$item) {
-    $params = ['table' => static::$table,'where'=>['id'=>$id]];
+  public static function update($id,$item,$idName='id') {
+    $params = ['table' => static::$table,'where'=>[$idName=>$id]];
 	DB::_update($params,$item);
   }
   

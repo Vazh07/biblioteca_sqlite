@@ -11,32 +11,32 @@
 </head>
 <body>
   <div>
-  <div class="row">
-    <div class="eleven column" style="margin-top: 10%">
-     <h2>{{title}}</h2>
-     <table><thead>
-      <tr>
-        <th>title</th>
-        <th>edition</th>
-        <th>copyright</th>
-        <th>language</th>
-        <th>pages</th>
-        <th>author</th>
-        <th>publisher</th>
-      </tr>
-    </thead><tbody>
-      {{#books}}
-      <tr><td><a href="/book/{{id}}"/>{{title}}</a></td>
-        <td>{{edition}}</td>
-        <td>{{copyright}}</td>
-        <td>{{language}}</td>
-        <td>{{pages}}</td>
-        <td><a href="/author/{{author_id}}"/>{{author}}</a></td>
-        <td><a href="/publisher/{{publisher_id}}"/>{{publisher}}</a></td></tr>
-      {{/books}}</tbody>
-    </table>
+    <div class="row">
+      <div class="eleven column" style="margin-top: 10%">
+       <h2>{{title}}</h2>
+       <table><thead>
+        <tr>
+          <th>title</th>
+          <th>edition</th>
+          <th>copyright</th>
+          <th>language</th>
+          <th>pages</th>
+          <th>author</th>
+          <th>publisher</th>
+        </tr>
+      </thead><tbody>
+        {{#books}}
+        <tr><td><a href="/book/{{book_id}}"/>{{book_title}}</a></td>
+          <td>{{book_edition}}</td>
+          <td>{{book_copyright}}</td>
+          <td>{{book_language}}</td>
+          <td>{{book_pages}}</td>
+          <td><a href="/author/{{book_author_id}}"/>{{book_author}}</a></td>
+          <td><a href="/publisher/{{book_publisher_id}}"/>{{book_publisher}}</a></td></tr>
+        {{/books}}</tbody>
+      </table>
+    </div>
   </div>
-</div>
-<a class="button button-primary" href="/">Back</a>
+  <a class="button button-primary" href="/">Back</a>
 </div>
 </body>

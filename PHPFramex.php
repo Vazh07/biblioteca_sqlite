@@ -582,8 +582,8 @@ class Query {
 	DB::_insert($this->params,$item);
   }
   
-  public function update($id,$item) {
-	$this->params['where'] = ['id'=>$id];
+  public function update($id,$item,$idName='$id') {
+	$this->params['where'] = [$idName=>$id];
 	DB::_update($this->params,$item);
   }
   
@@ -772,8 +772,8 @@ class Model {
 	DB::_insert($params,$item);
   }
   
-  public static function update($id,$item) {
-    $params = ['table' => static::$table,'where'=>['id'=>$id]];
+  public static function update($id,$item,$idName='$id') {
+    $params = ['table' => static::$table,'where'=>[$idName=>$id]];
 	DB::_update($params,$item);
   }
   

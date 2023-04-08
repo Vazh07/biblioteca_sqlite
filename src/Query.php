@@ -82,8 +82,8 @@ class Query {
 	DB::_insert($this->params,$item);
   }
   
-  public function update($id,$item) {
-	$this->params['where'] = ['id'=>$id];
+  public function update($id,$item,$idName='id') {
+	$this->params['where'] = [$idName=>$id];
 	DB::_update($this->params,$item);
   }
   

@@ -28,7 +28,9 @@
           <td>{{author_nationality}}</td>
           <td>{{author_birth_year}}</td>
           <td>{{author_fields}}</td>
-          <td><ul>{{#books}}<li><a href="/book/{{book_id}}">{{book_title}}</a></li>{{/books}}</ul></td></tr>
+          <td><ul>{{#books}}
+            <li><a href="/book/{{book_id}}">{{book_title}}</a></li>
+          {{/books}}</ul></td></tr>
         {{/authors}}</tbody>
       </table>
     </div>

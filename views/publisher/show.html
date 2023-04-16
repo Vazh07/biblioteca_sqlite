@@ -12,28 +12,30 @@
 <body>
   <div>
     <div class="row">
-   <div class="eleven column" style="margin-top: 10%">
-     <h2>{{title}}</h2>
-     <table><thead>
-      <tr>
-        <th>publisher</th>
-        <th>country</th>
-        <th>founded</th>
-        <th>genre</th>
-        <th>books_title</th>
-      </tr>
-    </thead><tbody>
-      {{#publisher}}
-     <tr><td><a href="/publisher/{{publisher_id}}"/>{{publisher_name}}</a></td>
-        <td>{{publisher_country}}</td>
-        <td>{{publisher_founded}}</td>
-        <td>{{publisher_genre}}</td>
-        <td><ul>{{#books}}<li><a href="/book/{{book_id}}">{{book_title}}</a></li>{{/books}}</ul></td></tr>
-        <a class="button button-primary" href="/publisher/{{publisher_id}}/edit">Edit</a> 
-      {{/publisher}}</tbody>
-    </table>
+     <div class="eleven column" style="margin-top: 10%">
+       <h2>{{title}}</h2>
+       <table><thead>
+        <tr>
+          <th>publisher</th>
+          <th>country</th>
+          <th>founded</th>
+          <th>genre</th>
+          <th>books_title</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#publisher}}
+        <tr><td><a href="/publisher/{{publisher_id}}"/>{{publisher_name}}</a></td>
+          <td>{{publisher_country}}</td>
+          <td>{{publisher_founded}}</td>
+          <td>{{publisher_genre}}</td>
+          <td><ul>{{#books}}<li><a href="/book/{{book_id}}">{{book_title}}</a></li>{{/books}}</ul></td></tr>
+          <a class="button button-primary" href="/publisher/{{publisher_id}}/edit">Edit</a> 
+          {{/publisher}}
+        </tbody>
+      </table>
+    </div>
   </div>
-</div>
-<a class="button button-primary" href="/publisher">Back</a>
+  <a class="button button-primary" href="/publisher">Back</a>
 </div>
 </body>

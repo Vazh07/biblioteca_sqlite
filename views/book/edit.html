@@ -26,7 +26,7 @@
         </tr>
       </thead><tbody>
         {{#book}}
-        <form action="/book/{{author_id}}" method="POST">
+        <form action="/book/{{book_id}}" method="POST">
           <input type="hidden" name="_method" value="PUT">
          <tr><td><input type="text" name="book_title" value="{{book_title}}"></td>
           <td><input type="text" name="book_edition" value="{{book_edition}}"></td>
@@ -37,8 +37,8 @@
             <a href="/author/{{book_author_id}}"/>{{book_author}}</a><br>
             {{#authors}}
             <div class="same-row">
-                <input type="radio" name="author-id" value="{{author_name}}">
-                <label for="author-{{author_id}}">{{author_name}}</label><br>
+                <input type="radio" name="author_id" value="author_{{author_id}}">
+                <label for="author_{{author_id}}">{{author_name}}</label><br>
               </div>
             {{/authors}}
           </td>
@@ -46,8 +46,8 @@
             <a href="/publisher/{{book_publisher_id}}"/>{{book_publisher}}</a><br>
             {{#publishers}}
             <div class="same-row">
-                <input type="radio" name="publisher-id" value="{{publisher_name}}">
-                <label for="publisher-{{publisher_id}}">{{publisher_name}}</label><br>
+                <input type="radio" name="publisher_id" value="publisher_{{publisher_id}}">
+                <label for="publisher_{{publisher_id}}">{{publisher_name}}</label><br>
               </div>
             {{/publishers}}
           </td>
